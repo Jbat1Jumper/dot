@@ -1,4 +1,7 @@
 - clean: ['~']
 - link:
     ~/.alacritty.yml: alacritty.yml
+    ~/.zshrc: zshrc
+    ~/.tmux.conf: tmux.conf
+    ~/.config/nvim: nvim
 - shell: []
