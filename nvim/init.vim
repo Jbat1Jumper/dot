@@ -60,6 +60,9 @@ if basic_configuration
     set cursorline
     hi CursorLine cterm=NONE ctermbg=darkgray
 
+    " Make folds differ from current line color
+    highlight Folded ctermfg=darkgray ctermbg=black
+
     " Save as sudo
     ca w!! w !sudo tee "%"
 
