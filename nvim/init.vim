@@ -19,16 +19,30 @@ if basic_configuration
     set number relativenumber
     set nowrap
 
-    silent! set winheight=2
-    silent! set winminheight=2
-    silent! set winheight=90
-    set winheight=3
-    set winminheight=3
-    set winheight=90
+    " silent! set winheight=2
+    " silent! set winminheight=2
+    " silent! set winheight=90
+    " set winheight=3
+    " set winminheight=3
+    " set winheight=10
 
     set winwidth=12
     silent! set winminwidth=12
     set winwidth=85
+
+    " Alternativa
+    " set winwidth=80
+    " set winminwidth=80
+    " autocmd WinEnter * wincmd |
+     
+    set winheight=5
+    set winminheight=5
+    autocmd WinEnter * wincmd _
+    
+    highlight Pmenu ctermbg=darkgray guibg=darkgray ctermfg=white guifg=white
+    highlight CocErrorSign ctermfg=lightred ctermbg=darkgray
+    highlight CocInfoSign ctermfg=blue
+    highlight CocWarningSign ctermfg=yellow
 
     " Space as leader
     let mapleader = " "
@@ -45,6 +59,9 @@ if basic_configuration
     " Highlight current line
     set cursorline
     hi CursorLine cterm=NONE ctermbg=darkgray
+
+    " Make folds differ from current line color
+    highlight Folded ctermfg=darkgray ctermbg=black
 
     " Save as sudo
     ca w!! w !sudo tee "%"
@@ -93,6 +110,9 @@ if coc_configuration
     " Always show the signcolumn, otherwise it would shift the text each time
     " diagnostics appear/become resolved.
     set signcolumn=yes
+    nmap <silent> gp <Plug>(coc-diagnostic-prev)
+    nmap <silent> gn <Plug>(coc-diagnostic-next)
+
 
     " Highlight the symbol and its references when holding the cursor.
     autocmd CursorHold * silent call CocActionAsync('highlight')
