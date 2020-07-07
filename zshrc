@@ -102,3 +102,27 @@ export PATH="/home/nikita/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+
+fix_mouse_orientation_on_dell() {
+    xinput set-prop 13 310 1 1 0
+    xinput set-prop 13 310 0 1 0
+    xinput set-prop 13 310 1 0 0
+    xinput set-prop 13 278 1
+    xinput set-prop 12 314 1
+    xinput set-prop 12 314 0
+    xinput set-prop 12 310 0 0 1
+    xinput set-prop 13 278 1
+    xinput set-prop 13 325 1
+    xinput set-prop 13 307 1
+    xinput set-prop 13 310 1 1 0
+    xinput set-prop 13 310 1
+    xinput set-prop 13 310 3
+    xinput set-prop 13 310 1 1 0
+    xinput set-prop 13 310 0 1 0
+    xinput set-prop 13 310 1 0 0
+    xinput set-prop 13 278 1
+    xinput set-prop 12 314 1
+    xinput set-prop 12 314 0
+    xinput set-prop 12 310 0 0 1
+}
+
