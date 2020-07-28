@@ -2,7 +2,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'scrooloose/nerdtree'
 	Plug 'vim-airline/vim-airline'
 	Plug 'ambv/black'
-    Plug 'mhinz/vim-startify'
+"    Plug 'mhinz/vim-startify'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'vim-scripts/SyntaxRange'
     Plug 'ctrlpvim/ctrlp.vim'
