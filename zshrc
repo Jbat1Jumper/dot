@@ -10,6 +10,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="agnoster"
 
+setopt histignorespace
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -102,6 +104,7 @@ export PATH="/home/nikita/.pyenv/bin:$PATH"
 # eval "$(pyenv init -)"
 # eval "$(pyenv virtualenv-init -)"
 
+alias lock='i3lock -c000000'
 
 fix_mouse_orientation_on_dell() {
     xinput set-prop 13 310 1 1 0
