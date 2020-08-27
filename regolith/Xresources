@@ -1,0 +1,29 @@
+i3-wm.font: pango:Source Code Pro 10
+i3-wm.bar.position: top
+i3-wm.bar.font: pango:Source Code Pro 10, Material Design Icons 10
+i3xrocks.value.font: pango:Source Code Pro 10
+rofi.font: Source Code Pro 10
+i3-wm.bar.separator: "'"
+i3-wm.bar.separator.color: "#CBCCC6"
+
+i3-wm.bar.background.color: "#2D2A2E"
+i3-wm.bar.trayoutput: primary
+
+i3-wm.bar.background.color: "#2D2A2E"
+i3-wm.bar.workspace.focused.text.color: "#2D2A2E"
+i3-wm.client.focused.color.border: "#2D2A2E"
+i3-wm.client.focused_inactive.color.border: "#2D2A2E"
+i3-wm.client.focused_inactive.color.child_border: "#2D2A2E"
+i3-wm.client.unfocused.color.border: "#2D2A2E"
+i3-wm.client.unfocused.color.child_border: "#2D2A2E"
+i3-wm.client.urgent.color.border: "#2D2A2E"
+i3-wm.client.urgent.color.child_border: "#2D2A2E"
+
+i3-wm.bar.workspace.active.text.color: "#403E41"
+i3-wm.bar.workspace.inactive.text.color: "#403E41"
+i3-wm.client.focused_inactive.color.background: "#403E41"
+i3-wm.client.focused_inactive.color.indicator: "#403E41"
+i3-wm.client.unfocused.color.background: "#403E41"
+i3-wm.client.unfocused.color.indicator: "#403E41"
+
+gnome.wallpaper: "/usr/share/backgrounds/hardy_wallpaper_uhd.png"

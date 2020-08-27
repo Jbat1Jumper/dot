@@ -2,6 +2,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'scrooloose/nerdtree'
 	Plug 'vim-airline/vim-airline'
 	Plug 'ambv/black'
+    Plug 'chrisbra/Colorizer'
+"    Plug 'ap/vim-css-color'
 "    Plug 'mhinz/vim-startify'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'vim-scripts/SyntaxRange'
@@ -35,8 +37,8 @@ if basic_configuration
     " set winminwidth=80
     " autocmd WinEnter * wincmd |
      
-    set winheight=5
-    set winminheight=5
+    set winheight=1
+    set winminheight=1
     autocmd WinEnter * wincmd _
     
     highlight Pmenu ctermbg=darkgray guibg=darkgray ctermfg=white guifg=white
@@ -112,6 +114,9 @@ if coc_configuration
     set signcolumn=yes
     nmap <silent> gp <Plug>(coc-diagnostic-prev)
     nmap <silent> gn <Plug>(coc-diagnostic-next)
+
+    " Format code
+    nmap <Leader>ff <Plug>(coc-format)
 
 
     " Highlight the symbol and its references when holding the cursor.

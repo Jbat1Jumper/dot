@@ -4,4 +4,13 @@
     ~/.zshrc: zshrc
     ~/.tmux.conf: tmux.conf
     ~/.config/nvim: nvim
+    ~/.config/regolith/i3/config: 
+        create: true
+        path: i3.config
+    ~/.config/regolith/Xresources: 
+        create: true
+        path: regolith/Xresources
+    ~/.bin/wrapitup: 
+        create: true
+        path: bin/wrapitup.sh
 - shell: []
