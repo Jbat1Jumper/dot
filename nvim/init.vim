@@ -1,6 +1,7 @@
 call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'scrooloose/nerdtree'
 	Plug 'vim-airline/vim-airline'
+    Plug 'airblade/vim-gitgutter'
 	Plug 'ambv/black'
     Plug 'chrisbra/Colorizer'
 "    Plug 'ap/vim-css-color'
@@ -8,13 +9,38 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'vim-scripts/SyntaxRange'
     Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'vim-scripts/highlight.vim'
 call plug#end()
 
 let basic_configuration = 1
 let coc_configuration = 1
 let black_configuration = 1
 let nerdtree_configuration = 1
+let gitgutter_configuration = 1
 
+if gitgutter_configuration 
+
+    hi GitGutterAddLineNr           ctermfg=lightgreen
+    hi GitGutterChangeLineNr        ctermfg=blue
+    hi GitGutterDeleteLineNr        ctermfg=red
+    hi GitGutterChangeDeleteLineNr  ctermfg=magenta
+
+    highlight GitGutterAdd    ctermfg=lightgreen
+    highlight GitGutterChange ctermfg=yellow
+    highlight GitGutterDelete ctermfg=yellow
+
+    let g:gitgutter_signs = 1
+    let g:gitgutter_highlight_linenrs = 0
+    let g:gitgutter_preview_win_floating = 0
+    let g:gitgutter_use_location_list = 1
+
+    nmap <silent> gph  <Plug>(GitGutterPrevHunk)
+    nmap <silent> gnh  <Plug>(GitGutterNextHunk)
+    nmap <silent> ghp <Plug>(GitGutterPreviewHunk) :wincmd P<CR>
+    nmap <silent> <Leader>hs <Plug>(GitGutterStageHunk)
+    nmap <silent> <Leader>hu <Plug>(GitGutterUndoHunk)
+
+endif
 
 if basic_configuration
 
@@ -30,15 +56,15 @@ if basic_configuration
 
     set winwidth=12
     silent! set winminwidth=12
-    set winwidth=85
+    set winwidth=87
 
     " Alternativa
     " set winwidth=80
     " set winminwidth=80
     " autocmd WinEnter * wincmd |
      
-    set winheight=1
-    set winminheight=1
+    silent! set winheight=1
+    silent! set winminheight=1
     autocmd WinEnter * wincmd _
     
     highlight Pmenu ctermbg=darkgray guibg=darkgray ctermfg=white guifg=white
@@ -112,8 +138,10 @@ if coc_configuration
     " Always show the signcolumn, otherwise it would shift the text each time
     " diagnostics appear/become resolved.
     set signcolumn=yes
-    nmap <silent> gp <Plug>(coc-diagnostic-prev)
-    nmap <silent> gn <Plug>(coc-diagnostic-next)
+    nmap <silent> gpw <Plug>(coc-diagnostic-prev)
+    nmap <silent> gpe <Plug>(coc-diagnostic-prev)
+    nmap <silent> gnw <Plug>(coc-diagnostic-next)
+    nmap <silent> gne <Plug>(coc-diagnostic-next)
 
     " Format code
     nmap <Leader>ff <Plug>(coc-format)
