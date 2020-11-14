@@ -4,6 +4,7 @@
     ~/.zshrc: zshrc
     ~/.tmux.conf: tmux.conf
     ~/.config/nvim: nvim
+    ~/.ideavimrc: ideavimrc.vim
     ~/.config/regolith/i3/config: 
         create: true
         path: i3.config
