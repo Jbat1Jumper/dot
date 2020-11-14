@@ -104,6 +104,9 @@ export PATH="$HOME/.bin:$HOME/.pyenv/bin:$PATH"
 # eval "$(pyenv init -)"
 # eval "$(pyenv virtualenv-init -)"
 
+# NPM path
+export PATH="$PATH:$HOME/.npm/bin"
+
 alias lock='i3lock -c000000'
 
 fix_mouse_orientation_on_dell() {
