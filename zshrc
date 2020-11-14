@@ -100,7 +100,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH="/home/nikita/.bin:/home/nikita/.pyenv/bin:$PATH"
+export PATH="$HOME/.bin:$HOME/.pyenv/bin:$PATH"
 # eval "$(pyenv init -)"
 # eval "$(pyenv virtualenv-init -)"
 
@@ -129,3 +129,5 @@ fix_mouse_orientation_on_dell() {
     xinput set-prop 12 310 0 0 1
 }
 
+source $HOME/.cargo/env
+export PATH="/usr/local/opt/libpq/bin:$PATH"
