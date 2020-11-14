@@ -1,3 +1,5 @@
+set nocompatible
+
 call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'scrooloose/nerdtree'
 	Plug 'vim-airline/vim-airline'
@@ -9,6 +11,7 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'vim-scripts/SyntaxRange'
     Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'sheerun/vim-polyglot'
     Plug 'vim-scripts/highlight.vim'
 call plug#end()
 
@@ -17,6 +20,12 @@ let coc_configuration = 1
 let black_configuration = 1
 let nerdtree_configuration = 1
 let gitgutter_configuration = 1
+let ctrlp_configuration = 1
+
+if ctrlp_configuration
+    " use only files that are tracked by git
+    let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+endif
 
 if gitgutter_configuration 
 
@@ -104,8 +113,9 @@ endif
 
 if nerdtree_configuration
 
-    map <Leader>n :NERDTreeFocus<CR>
-    map <Leader>N :NERDTreeClose<CR>
+    map <Leader>nn :NERDTreeFocus<CR>
+    map <Leader>nf :NERDTreeFind<CR>
+    map <Leader>nc :NERDTreeClose<CR>
 
 endif
 
