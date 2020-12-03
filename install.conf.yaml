@@ -5,12 +5,9 @@
     ~/.tmux.conf: tmux.conf
     ~/.config/nvim: nvim
     ~/.ideavimrc: ideavimrc.vim
-    ~/.config/regolith/i3/config: 
+    ~/.config/regolith: 
         create: true
-        path: i3.config
-    ~/.config/regolith/Xresources: 
-        create: true
-        path: regolith/Xresources
+        path: regolith
     ~/.bin/wrapitup: 
         create: true
         path: bin/wrapitup.sh
