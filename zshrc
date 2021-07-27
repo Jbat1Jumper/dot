@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -8,7 +15,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 setopt histignorespace
 
@@ -100,14 +107,21 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH="$HOME/.bin:$HOME/.pyenv/bin:$PATH"
-# eval "$(pyenv init -)"
+# export PATH="$HOME/.bin:$HOME/.pyenv/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
 # eval "$(pyenv virtualenv-init -)"
 
 # NPM path
 export PATH="$PATH:$HOME/.npm/bin"
 
 alias lock='i3lock -c000000'
+
+alias ls='exa'
+alias ll='exa --git -l'
+alias lll='exa --git -lTL 2'
+alias llll='exa --git -lTL 3'
 
 fix_mouse_orientation_on_dell() {
     xinput set-prop 13 310 1 1 0
@@ -134,3 +148,6 @@ fix_mouse_orientation_on_dell() {
 
 source $HOME/.cargo/env
 export PATH="/usr/local/opt/libpq/bin:$PATH"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

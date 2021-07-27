@@ -81,6 +81,9 @@ if basic_configuration
     highlight CocInfoSign ctermfg=blue
     highlight CocWarningSign ctermfg=yellow
 
+    highlight CocRustTypeHint ctermfg=black
+    highlight CocRustChainingHint ctermfg=black
+
     " Space as leader
     let mapleader = " "
     set showcmd
@@ -144,6 +147,8 @@ if coc_configuration
         call CocAction('doHover')
       endif
     endfunction
+
+    inoremap <silent><expr> <c-space> coc#refresh()
 
     " Always show the signcolumn, otherwise it would shift the text each time
     " diagnostics appear/become resolved.
