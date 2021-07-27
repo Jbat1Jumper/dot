@@ -107,11 +107,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# export PATH="$HOME/.bin:$HOME/.pyenv/bin:$PATH"
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.bin:$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init --path)"
-# eval "$(pyenv virtualenv-init -)"
 
 # NPM path
 export PATH="$PATH:$HOME/.npm/bin"
@@ -145,6 +142,12 @@ fix_mouse_orientation_on_dell() {
     xinput set-prop 12 314 0
     xinput set-prop 12 310 0 0 1
 }
+
+# Node version manager
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
 
 source $HOME/.cargo/env
 export PATH="/usr/local/opt/libpq/bin:$PATH"
