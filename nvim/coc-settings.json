@@ -1,6 +1,18 @@
 {
     "python.linting.enabled": true,
-    "python.linting.flake8Args": "",
+    "python.linting.flake8Args": [],
     "python.linting.flake8Enabled": true,
-    "python.linting.pylintEnabled": false
+    "python.linting.pylintEnabled": false,
+    "languageserver": {
+      "ccls": {
+        "command": "ccls",
+        "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
+        "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
+        "initializationOptions": {
+            "cache": {
+              "directory": "/tmp/ccls"
+            }
+          }
+      }
+    }
 }
