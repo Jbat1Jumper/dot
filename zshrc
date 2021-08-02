@@ -108,7 +108,10 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export PATH="$HOME/bin:$HOME/.bin:$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init --path)"
+
+if type "pyenv" > /dev/null; then
+    eval "$(pyenv init --path)"
+fi
 
 # NPM path
 export PATH="$PATH:$HOME/.npm/bin"
