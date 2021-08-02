@@ -6,6 +6,7 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'airblade/vim-gitgutter'
 	Plug 'ambv/black'
     Plug 'chrisbra/Colorizer'
+    Plug 'APZelos/blamer.nvim'
 "    Plug 'ap/vim-css-color'
 "    Plug 'mhinz/vim-startify'
 "    Plug 'cosminadrianpopescu/vim-sql-workbench'
@@ -36,6 +37,12 @@ let php_hl_optimization = 1
 let g:sw_config_dir = '~'
 let g:sw_exe = '/Applications/SQLWorkbenchJ.app/Contents/Java/sqlwbconsole.sh'
 " let g:sw_cache
+
+let g:blamer_delay = 2000
+let g:blamer_show_in_insert_modes = 0
+let g:blamer_prefix = ' > '
+let g:blamer_relative_time = 1
+highlight Blamer ctermfg=black
 
 if basic_configuration
 
