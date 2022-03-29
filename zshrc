@@ -110,7 +110,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH="$HOME/bin:$HOME/.bin:$HOME/.pyenv/bin:$PATH"
 
 if type "pyenv" > /dev/null; then
-    eval "$(pyenv init --path)"
+    eval "$(pyenv init -)"
 fi
 
 # NPM path
@@ -122,6 +122,8 @@ alias ls='exa'
 alias ll='exa --git -l'
 alias lll='exa --git -lTL 2'
 alias llll='exa --git -lTL 3'
+alias lllll='echo "please stop"'
+alias llllll='echo "please, please stop"'
 
 fix_mouse_orientation_on_dell() {
     xinput set-prop 13 310 1 1 0
