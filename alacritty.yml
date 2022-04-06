@@ -98,6 +98,7 @@ font:
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
     family: Source Code Pro
+    # On Mac: SauceCodePro Nerd Font Mono
     style: Regular
 
   # Bold font face
