@@ -1,13 +1,14 @@
 set nocompatible
 
 call plug#begin('~/.local/share/nvim/plugged')
-	Plug 'tpope/vim-fugitive'
+"    Plug 'tpope/vim-fugitive'
 	Plug 'scrooloose/nerdtree'
 	Plug 'vim-airline/vim-airline'
     Plug 'airblade/vim-gitgutter'
 	Plug 'ambv/black'
     Plug 'chrisbra/Colorizer'
     Plug 'APZelos/blamer.nvim'
+    Plug 'jwalton512/vim-blade'
 "    Plug 'ap/vim-css-color'
 "    Plug 'mhinz/vim-startify'
 "    Plug 'cosminadrianpopescu/vim-sql-workbench'

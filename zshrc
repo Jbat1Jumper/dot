@@ -110,8 +110,11 @@ PROMPT="╭─${current_dir}${rvm_ruby}${vcs_branch}${venv_prompt}
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH="$HOME/bin:$HOME/.bin:$HOME/.pyenv/bin:$HOME/.dot/bin:$PATH"
-eval "$(pyenv init --path)"
+export PATH="$HOME/bin:$HOME/.bin:$HOME/.pyenv/bin:$PATH"
+
+if type "pyenv" > /dev/null; then
+    eval "$(pyenv init -)"
+fi
 
 # NPM path
 export PATH="$PATH:$HOME/.npm/bin"
