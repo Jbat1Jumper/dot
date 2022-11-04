@@ -15,7 +15,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="bira"
 
 setopt histignorespace
 
@@ -81,6 +81,9 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+PROMPT="╭─${current_dir}${rvm_ruby}${vcs_branch}${venv_prompt}
+╰─%B${user_symbol}%b "
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -107,7 +110,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH="$HOME/bin:$HOME/.bin:$HOME/.pyenv/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.bin:$HOME/.pyenv/bin:$HOME/.dot/bin:$PATH"
 eval "$(pyenv init --path)"
 
 # NPM path
@@ -115,10 +118,10 @@ export PATH="$PATH:$HOME/.npm/bin"
 
 alias lock='i3lock -c000000'
 
-alias ls='exa'
-alias ll='exa --git -l'
-alias lll='exa --git -lTL 2'
-alias llll='exa --git -lTL 3'
+alias ls='exa --icons'
+alias ll='exa --icons --git -l'
+alias lll='exa --icons --git -lTL 2'
+alias llll='exa --icons --git -lTL 3'
 
 fix_mouse_orientation_on_dell() {
     xinput set-prop 13 310 1 1 0
@@ -145,12 +148,15 @@ fix_mouse_orientation_on_dell() {
 
 # Node version manager
 export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 source $HOME/.cargo/env
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+alias nifty='ssh -t nikita@192.168.0.131'
+alias niftmux='ssh -t nikita@192.168.0.131 "TERM=xterm-256color tmux new-session -A -s main"'
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
