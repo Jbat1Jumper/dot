@@ -14,5 +14,8 @@
             }
           }
       }
-    }
+    },
+    "explorer.icon.enableNerdfont": true,
+    "javascript.suggestionActions.enabled": false,
+    "tsserver.log": "verbose"
 }
