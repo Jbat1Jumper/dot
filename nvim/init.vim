@@ -17,12 +17,14 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'junegunn/fzf'
     Plug 'junegunn/fzf.vim'
     Plug 'mileszs/ack.vim'
+    Plug 'lambdalisue/suda.vim'
 "    Plug 'ctrlpvim/ctrlp.vim'
     Plug 'sheerun/vim-polyglot'
     Plug 'vim-scripts/highlight.vim'
     Plug 'francoiscabrol/ranger.vim'
     Plug 'rbgrouleff/bclose.vim'
     Plug 'adoy/vim-php-refactoring-toolbox'
+    Plug 'pantharshit00/vim-prisma'
 "    Plug 'tpope/vim-abolish'
 call plug#end()
 
@@ -177,11 +179,10 @@ if gitgutter_configuration
 endif
 
 if nerdtree_configuration
-
+    let g:NERDTreeIgnore = ['^node_modules$']
     map <Leader>nn :NERDTreeFocus<CR>
     map <Leader>nf :NERDTreeFind<CR>
     map <Leader>nc :NERDTreeClose<CR>
-
 endif
 
 
@@ -234,6 +235,10 @@ if coc_configuration
 
     " Format code
     nmap <Leader>ff <Plug>(coc-format)
+
+    " Autocomplete using Enter
+    inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+        \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 
     " Highlight the symbol and its references when holding the cursor.
